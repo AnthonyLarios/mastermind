@@ -14,5 +14,13 @@ module Mastermind
       end
 
     end
+
+    context "#name" do
+      it "returns the name" do
+        input = { name: "Anthony" }
+        player = Player.new(input)
+        expect(player.name).to eq "Anthony"
+      end
+    end
   end
 end
