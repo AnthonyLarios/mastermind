@@ -20,7 +20,14 @@ module Mastermind
           expect(row.count).to eq(4)
         end
       end
-      
+
+    end
+
+    context "#grid" do
+      it "returns the grid" do
+        board = Board.new(grid: "something to return")
+        expect(board.grid).to eq "something to return"
+      end
     end
 
   end
