@@ -1,7 +1,14 @@
 module Mastermind
   class Board
-    def initialize(input)
-      @grid = input.fetch(:grid)
+    attr_reader :grid
+    def initialize(input = {})
+      @grid = input.fetch(:grid, default_grid)
+    end
+
+    private
+
+    def default_grid
+      Array.new(12) { Array.new(4) { Cell.new } }
     end
   end
 end
