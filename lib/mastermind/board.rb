@@ -5,6 +5,10 @@ module Mastermind
       @grid = input.fetch(:grid, default_grid)
     end
 
+    def get_cell(x, y)
+      grid[y][x]
+    end
+
     private
 
     def default_grid
