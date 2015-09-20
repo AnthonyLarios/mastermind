@@ -48,5 +48,29 @@ module Mastermind
       end
     end
 
+    context "#game_over" do
+
+      it "returns :win if win? returns true" do
+        board = Board.new
+        board.stub(:win?) { true }
+        expect(board.game_over).to eq :win
+      end
+
+      it "returns :lose if win? returns false and lose? returns true" do
+        board = Board.new
+        board.stub(:win?) { false }
+        board.stub(:lose?) { true }
+        expect(board.game_over).to eq :lose
+      end
+
+      it "returns false if win? and lose? return false" do
+        board = Board.new
+        board.stub(:win?) { false }
+        board.stub(:lose?) { false }
+        expect(board.game_over).to eq false
+      end
+
+    end
+
   end
 end
