@@ -38,5 +38,15 @@ module Mastermind
       end
     end
 
+    context "#set_cell" do
+      it "updates the value of the cell object at a (x, y) coordinate" do
+        Val = Struct.new(:value)
+        grid = [[Val.new(""), ""], ["", ""]]
+        board = Board.new(grid: grid)
+        board.set_cell(0, 0, "blue")
+        expect(board.get_cell(0, 0).value).to eq "blue"
+      end
+    end
+
   end
 end
