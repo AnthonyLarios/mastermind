@@ -13,6 +13,12 @@ module Mastermind
       get_cell(x, y).value = value
     end
 
+    def game_over
+      return :win if win?
+      return :lose if lose?
+      false
+    end
+
     private
 
     def default_grid
