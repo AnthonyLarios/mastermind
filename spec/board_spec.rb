@@ -30,5 +30,13 @@ module Mastermind
       end
     end
 
+    context "#grid_cell" do
+      it "returns the cell based on the (x, y) coordinate system" do
+        grid = [["", "color"], ["", ""]]
+        board = Board.new(grid: grid)
+        expect(board.get_cell(1, 0)).to eq "color"
+      end
+    end
+
   end
 end
